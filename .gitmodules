@@ -1,0 +1,6 @@
+[submodule "ROS"]
+	path = ROS
+	url = git@github.com:pomelo925/tel_ros.git
+[submodule "STMH723ZG"]
+	path = STMH723ZG
+	url = git@github.com:pomelo925/tel_stm32.git
