@@ -39,6 +39,6 @@
 ## Review 
 1. RPi 4B, or saying that SBC boards, are NOT stable and reliable on commuication with stm32 by rosserial, especially working over 30 minutes or connecting to multiple devices.
 2. rosserial_server, written in cpp, has higher quailty and error message display than rosserial_python. 
-3. Bluetooth 5.0 is an AWFUL choice for remote control, having low adaptibilty to strong-interference environment, even merely 2~5m signal could be affected seriouly.
+3. Bluetooth 5.0 is an AWFUL choice for remote control, having low adaptibilty to strong-interference environment, even merely 2~5m signal could be affected seriously.
 4. Recognizing letters by OpenCV would NOT be reliable due to light interference. Machine learning (e.g YOLO) would be better alternative of OpenCV, be it the time cost of developing or the stability and accuracy of recognization outcomes.
-5. Restricted to the time limit, No integration of microswitch and IMU in this project. We calculate car pos and vel merely by receiving the datas of encoders.
+5. Owing to time constraints, No integration of microswitch and IMU in this project. We calculate car pos and vel merely by receiving the datas of encoders.
