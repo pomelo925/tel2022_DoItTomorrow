@@ -23,8 +23,8 @@
 * 遙控：PS5手把
 * 圖傳：小飛手模組 (含鏡頭)
 * 影像辨識：OpenCV
-* 通訊：ROS-STM --- rosserial_server (TTL)
-* 通訊：ROS-Arduino MEGA --- rosserial_python () 
+* 通訊：ROS-STM --- rosserial_server (CP2102 USB to TTL)
+* 通訊：ROS-Arduino MEGA --- rosserial_python
 * 通訊：PS5-Arduino MEGA --- Bluetooth 5.0
 
 ## 硬體
