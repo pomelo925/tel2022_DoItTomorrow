@@ -1,9 +1,9 @@
 # tel2022_DoItTomorrow 
 > 2022東京威力科創機器人大賽  -- DIT__明天再做
 
-> 創意技術獎 特優
+> 創意技術獎 特優 $12000  OwOO
 
-## 賽程內容說明
+## 比賽內容概略
 * 上半場智慧賽道
   * 全程自動化
   * 辨識方塊，夾取至另一區堆疊
@@ -15,20 +15,30 @@
   * 全程遙控
   * 夾取方塊
   * 操控者僅能觀看遠端畫面
-  * 現場干擾源極多
+  * 現場訊號干擾嚴重
 
 ## 開發軟韌體、框架
 * 晶片：STM32H723ZG
 * 開發平台：STM32CubeIDE、ROS
-* 遙控：Bluetooth 5.0 x PS5手把
+* 遙控：PS5手把
 * 圖傳：小飛手模組 (含鏡頭)
 * 影像辨識：OpenCV
-* 通訊：ROS-STM --- rosserial_server
-* 通訊：ROS_Arduino --- rosserial_python  
+* 通訊：ROS-STM --- rosserial_server (TTL)
+* 通訊：ROS-Arduino MEGA --- rosserial_python () 
+* 通訊：PS5-Arduino MEGA --- Bluetooth 5.0
 
-## 硬體層
-* 底盤：麥克納姆倫 (Mecanum)、蹺蹺板
-* 底盤驅動：直流馬達配 encoder、皮帶輪驅動
-* 車體回授：車身周圍的微動裝置、BNO055 (IMU)
+## 硬體
+* 底盤：麥克納姆輪 (Mecanum)、皮帶輪驅動、蹺蹺板結構
+* 驅動：底盤--直流馬達、SCARA--步進、Intake--堝桿馬達
+* 車體回授：微動、encoder、BNO055 (IMU)
 * 手臂：SCARA、末端三吸盤、氣動裝置 (電磁閥、氣泵)
-* 鋼鐵擂台吸取方塊裝置：Intake
+* Intake：PU圓皮帶、捲線器
+* 計算單元：Raspberry Pi 4B 
+* 電源：2S*1、3S*1、行充*1
+
+## Review 
+1. RPi 4B, or saying that SBC boards, are NOT stable and reliable on commuication with stm32 by rosserial, especially working over 30 minutes or connecting to multiple devices.
+2. rosserial_server, written in cpp, has higher quailty and error message display than rosserial_python. 
+3. Bluetooth 5.0 is an AWFUL choice for remote control, having low adaptibilty to strong-interference environment for merely 2~5m signals.
+4. Recognizing letters by OpenCV would NOT be reliable due to light interference. Machine learning (e.g YOLO) would be better alternative of OpenCV, be it the time cost of developing or the stability and accuracy of recognization outcomes.
+5. Restricted to the time limit, No integration of microswitch and IMU in this project. We calculate car pos and vel merely by receiving the datas of encoders.
