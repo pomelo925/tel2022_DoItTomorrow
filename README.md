@@ -34,7 +34,7 @@
 * 手臂：SCARA、末端三吸盤、氣動裝置 (電磁閥、氣泵)
 * Intake：PU圓皮帶、捲線器
 * 計算單元：Raspberry Pi 4B 
-* 電源：2S*1、3S*1、行充*1
+* 電源：2S電池x1、3S電池x1、行動電源x1
 
 ## Review 
 1. RPi 4B, or saying that SBC boards, are NOT stable and reliable on commuication with stm32 by rosserial, especially working over 30 minutes or connecting to multiple devices.
