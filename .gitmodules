@@ -4,3 +4,6 @@
 [submodule "STMH723ZG"]
 	path = STMH723ZG
 	url = git@github.com:pomelo925/tel_stm32.git
+[submodule "Arduino_ps5"]
+	path = Arduino_ps5
+	url = git@github.com:pomelo925/tel2022_arduino.git
